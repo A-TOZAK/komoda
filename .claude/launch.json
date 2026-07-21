@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "komoda-kenshu",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8731", "--directory", "/Users/tozakiakihiro/Claude/Projects/🎓-研修-菰田小"],
+      "port": 8731
+    }
+  ]
+}
