@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投影用スライド｜菰田小学校 校内研修（ICT活用）令和8年7月22日</title>
+<style>
+/* ===== School Stock トーン =====
+   色は3つ：紙(#fff)・墨(#15181c)・藍(#2b5fd9)。
+   設計ルールは外﨑の研修「教師のスライドづくり」の大原則5つに合わせている。
+   1枚に1つ／大きく少なく／そろえる／色は3つ／飾らない勇気。 */
+:root{
+  --ink:#15181c; --black:#0e0f11; --paper:#fff; --wash:#f6f6f4;
+  --line:#e6e6e3; --sub:#6b7077; --accent:#2b5fd9;
+  --font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:var(--font); background:#2f3237; color:var(--ink); overflow:hidden; -webkit-font-smoothing:antialiased}
+
+.stage{position:fixed; inset:0; display:grid; place-items:center}
+.deck{width:1280px; height:720px; background:var(--paper); position:relative; overflow:hidden; transform-origin:center center}
+
+.slide{position:absolute; inset:0; padding:104px 88px 72px; display:none; flex-direction:column; background:var(--paper)}
+.slide.on{display:flex}
+
+/* ---- 現在地（左上・全スライド共通） ---- */
+.hud{position:absolute; top:34px; left:88px; right:88px; display:flex; align-items:center; gap:18px}
+.hud .dots{display:flex; gap:6px}
+.hud .dots i{width:26px; height:26px; display:grid; place-items:center; font-family:var(--serif); font-size:14px; font-weight:700;
+  border:1px solid var(--line); color:#b9bcc2; font-style:normal; background:var(--paper)}
+.hud .dots i.done{border-color:var(--line); color:#c9ccd1}
+.hud .dots i.cur{background:var(--black); border-color:var(--black); color:#fff}
+.hud .now{font-size:19px; font-weight:700; letter-spacing:.04em; color:var(--ink)}
+.hud .min{font-size:16px; color:var(--sub); letter-spacing:.06em}
+.hud .pg{margin-left:auto; font-family:var(--serif); font-size:15px; color:#b9bcc2; letter-spacing:.08em}
+.slide[data-step="0"] .hud .dots,
+.slide[data-step="0"] .hud .now,
+.slide[data-step="0"] .hud .min{visibility:hidden}
+
+/* ---- 見出し・本文 ---- */
+.eye{display:inline-block; font-size:16px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:6px 16px; margin-bottom:26px; align-self:flex-start}
+h1{font-size:60px; font-weight:700; line-height:1.36; letter-spacing:.01em}
+h2{font-size:46px; font-weight:700; line-height:1.4; letter-spacing:.01em}
+.big{font-size:66px; font-weight:700; line-height:1.42; letter-spacing:.01em}
+.huge{font-size:74px; font-weight:700; line-height:1.36; letter-spacing:.01em}
+.accent{color:var(--accent)}
+.lead{font-size:30px; line-height:1.7; color:var(--ink); margin-top:26px; max-width:31em}
+.mid{display:flex; flex-direction:column; justify-content:center; flex:1}
+
+.slide > .three, .slide > .four{flex:1; align-content:center}
+.slide > ul.pts{flex:1; display:flex; flex-direction:column; justify-content:center}
+
+/* 用語の補足（小さく） */
+.note{margin-top:auto; padding-top:20px; border-top:1px solid var(--line); font-size:19px; line-height:1.75; color:var(--sub)}
+.note b{color:var(--ink); font-weight:700}
+.note span{display:block}
+
+/* ---- 表紙 ---- */
+.cover{justify-content:center}
+.cover .kick{font-size:22px; font-weight:700; letter-spacing:.18em; color:var(--sub); margin-bottom:28px}
+.cover h1{font-size:64px}
+.cover .meta{margin-top:46px; padding-top:26px; border-top:2px solid var(--ink); display:flex; gap:44px; font-size:22px; color:var(--sub)}
+.cover .meta b{color:var(--ink); font-weight:700}
+
+/* ---- 3つ並び ---- */
+.three{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:38px}
+.three .c{border:1px solid var(--ink); padding:26px 26px 28px; display:flex; flex-direction:column}
+.three .c .n{font-family:var(--serif); font-size:30px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:12px}
+.three .c b{font-size:29px; font-weight:700; line-height:1.4; margin-bottom:10px}
+.three .c span{font-size:20px; line-height:1.7; color:var(--sub)}
+
+/* ---- 4区分 ---- */
+.four{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:34px}
+.four .c{border:1px solid var(--ink); padding:22px 20px 24px; display:flex; flex-direction:column}
+.four .c .k{font-size:16px; font-weight:700; letter-spacing:.1em; color:var(--sub); margin-bottom:8px}
+.four .c b{font-size:34px; font-weight:700; line-height:1.3; margin-bottom:12px}
+.four .c span{font-size:19px; line-height:1.65; color:var(--sub)}
+
+/* ---- 流れ5コマ ---- */
+.flow{display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:34px}
+.flow .s{border:1px solid var(--ink); border-top:5px solid var(--ink); padding:20px 18px 22px}
+.flow .s.hi{border-top-color:var(--accent)}
+.flow .s .t{font-family:var(--serif); font-size:16px; color:var(--sub); letter-spacing:.06em}
+.flow .s .n{font-family:var(--serif); font-size:34px; font-weight:700; line-height:1; margin:6px 0 10px}
+.flow .s b{display:block; font-size:23px; font-weight:700; line-height:1.4}
+
+/* ---- 指示スライド（作業） ---- */
+.task{border:3px solid var(--black); padding:44px 48px; margin-top:8px}
+.task .lab{display:inline-block; font-size:18px; font-weight:700; letter-spacing:.16em; color:#fff; background:var(--black); padding:6px 18px; margin-bottom:24px}
+.task ol{list-style:none; counter-reset:t}
+.task ol li{counter-increment:t; position:relative; padding:12px 0 12px 62px; font-size:34px; font-weight:700; line-height:1.5}
+.task ol li::before{content:counter(t); position:absolute; left:0; top:14px; width:40px; height:40px; border:2px solid var(--accent);
+  color:var(--accent); font-family:var(--serif); font-size:21px; display:grid; place-items:center}
+.task .time{float:right; font-size:34px; font-weight:700; color:var(--accent); letter-spacing:.04em}
+
+/* ---- 箇条 ---- */
+ul.pts{list-style:none; margin-top:30px}
+ul.pts li{position:relative; padding:13px 0 13px 40px; font-size:29px; line-height:1.55; border-bottom:1px solid var(--line)}
+ul.pts li::before{content:""; position:absolute; left:2px; top:26px; width:16px; height:2px; background:var(--accent)}
+ul.pts li small{display:block; font-size:19px; color:var(--sub); line-height:1.6; margin-top:4px}
+
+/* ---- QRスライド ---- */
+.qrs{display:grid; grid-template-columns:300px 1fr; gap:56px; align-items:center; flex:1}
+.qrs .q{border:1px solid var(--ink); padding:16px; background:#fff}
+.qrs .q img{display:block; width:100%; height:auto}
+.qrs .q .cap{font-size:17px; color:var(--sub); text-align:center; margin-top:10px; letter-spacing:.04em}
+.url{font-family:var(--serif); font-size:26px; color:var(--ink); background:var(--wash); display:inline-block; padding:10px 20px; margin-top:22px; letter-spacing:.02em}
+
+/* ---- 図（軸） ---- */
+.fig{margin-top:26px; flex:1; display:flex; align-items:center}
+.fig svg{width:100%; height:auto; display:block}
+
+/* ---- 締め ---- */
+.end{justify-content:center; text-align:center; align-items:center}
+.end .eye{align-self:center}
+.end .huge{margin-top:8px}
+.end .huge{max-width:16em}
+
+/* ---- ナビ ---- */
+.ctrl{position:fixed; bottom:14px; right:18px; display:flex; gap:8px; z-index:10}
+.ctrl button{font-family:var(--font); font-size:13px; font-weight:700; color:#d7dade; background:rgba(255,255,255,.08);
+  border:1px solid #565a61; padding:7px 13px; cursor:pointer; letter-spacing:.06em}
+.ctrl button:hover{background:rgba(255,255,255,.18); color:#fff}
+.help{position:fixed; bottom:16px; left:18px; font-size:12.5px; color:#8b9098; letter-spacing:.06em; z-index:10}
+
+/* ---- 印刷（PDFで持っておく用） ---- */
+@page{ size:338.7mm 190.5mm; margin:0 }
+@media print{
+  body{background:#fff; overflow:visible}
+  .stage{position:static; display:block}
+  .deck{width:1280px; height:auto; transform:none !important}
+  .slide{display:flex !important; position:relative; width:1280px; height:720px; page-break-after:always; break-after:page}
+  .ctrl,.help{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="stage">
+<div class="deck" id="deck">
+
+<!-- 1 表紙 -->
+<section class="slide cover on" data-step="0">
+  <div class="kick">令和8年度　菰田小学校　校内研修</div>
+  <h1>ICT活用事例の共有と、<br>教材資料・ツールの紹介</h1>
+  <div class="meta">
+    <span>日時 <b>令和8年7月22日（水）</b></span>
+    <span>所要 <b>30分</b></span>
+    <span>担当 <b>外﨑 顯博</b></span>
+  </div>
+</section>
+
+<!-- 2 趣旨① -->
+<section class="slide" data-step="1">
+  <div class="mid">
+    <div class="big">各ツールの基本的な操作は、<br>先生方も子どもたちも、<br><span class="accent">ある程度身についてきた。</span></div>
+  </div>
+</section>
+
+<!-- 3 趣旨② -->
+<section class="slide" data-step="1">
+  <h2>だからこそ、今日は3つ。</h2>
+  <div class="three">
+    <div class="c"><div class="n">1</div><b>持ち寄る</b><span>校内でもう起きている活用を、全体で共有します。</span></div>
+    <div class="c"><div class="n">2</div><b>報告する</b><span>「書く活動」での実践を2つ、実物とあわせてお見せします。</span></div>
+    <div class="c"><div class="n">3</div><b>持ち帰る</b><span>そのまま使える教材資料と、校務のツールをお渡しします。</span></div>
+  </div>
+  <div class="note"><span>新しい操作の説明はしません。今日おぼえて帰ることは、ひとつもありません。</span></div>
+</section>
+
+<!-- 4 流れ -->
+<section class="slide" data-step="1">
+  <h2>本日の流れ</h2>
+  <div class="flow">
+    <div class="s hi"><div class="t">0–3分</div><div class="n">1</div><b>趣旨の確認</b></div>
+    <div class="s"><div class="t">3–11分</div><div class="n">2</div><b>活用事例の共有</b></div>
+    <div class="s"><div class="t">11–20分</div><div class="n">3</div><b>実践報告</b></div>
+    <div class="s"><div class="t">20–25分</div><div class="n">4</div><b>教材資料</b></div>
+    <div class="s"><div class="t">25–30分</div><div class="n">5</div><b>ツール</b></div>
+  </div>
+  <div class="task" style="margin-top:34px; padding:30px 40px">
+    <span style="font-size:20px; font-weight:700; letter-spacing:.14em; color:var(--sub)">本日の到達点</span>
+    <div style="font-size:40px; font-weight:700; margin-top:10px; line-height:1.45">「2学期にひとつ、やってみること」が<br>決まった状態で終える。</div>
+  </div>
+</section>
+
+<!-- 5 4区分 -->
+<section class="slide" data-step="2">
+  <h2>活用の場面を、4つに分けました。</h2>
+  <div class="four">
+    <div class="c"><div class="k">① 提示</div><b>見せる</b><span>教員が映して、子どもが見る。</span></div>
+    <div class="c"><div class="k">② 把握</div><b>集める</b><span>子どもの考えを、まとめて手元に。</span></div>
+    <div class="c"><div class="k">③ 表現</div><b>つくる</b><span>子どもが書く・撮る・まとめる。</span></div>
+    <div class="c"><div class="k">④ 共有</div><b>つなぐ</b><span>配る・集める・一緒に書く。</span></div>
+  </div>
+  <div class="note">
+    <span><b>Google Forms</b>＝アンケートや小テストを作って、答えを自動で集める道具です。</span>
+    <span><b>Google Classroom</b>＝課題を配ったり、集めたりする場所です。</span>
+  </div>
+</section>
+
+<!-- 6 軸図 -->
+<section class="slide" data-step="2">
+  <h2>大事なのは、端末が誰の手にあるか。</h2>
+  <div class="fig">
+    <svg viewBox="0 0 1100 366" role="img" aria-label="4つの活用場面を、教員が使う側から児童が使う側までの線の上に並べた図">
+      <line x1="60" y1="200" x2="1040" y2="200" stroke="#15181c" stroke-width="3"/>
+      <path d="M 1040 200 L 1024 192 L 1024 208 Z" fill="#15181c"/>
+      <path d="M 60 200 L 76 192 L 76 208 Z" fill="#15181c"/>
+      <text x="60" y="248" font-size="24" fill="#6b7077">教員が使う</text>
+      <text x="1040" y="248" font-size="24" fill="#6b7077" text-anchor="end">子どもが使う</text>
+      <g>
+        <circle cx="200" cy="200" r="12" fill="#15181c"/>
+        <text x="200" y="160" font-size="36" font-weight="bold" fill="#15181c" text-anchor="middle">見せる</text>
+        <text x="200" y="118" font-size="20" fill="#6b7077" text-anchor="middle">① 提示</text>
+        <circle cx="470" cy="200" r="12" fill="#15181c"/>
+        <text x="470" y="160" font-size="36" font-weight="bold" fill="#15181c" text-anchor="middle">集める</text>
+        <text x="470" y="118" font-size="20" fill="#6b7077" text-anchor="middle">② 把握</text>
+        <circle cx="740" cy="200" r="12" fill="#2b5fd9"/>
+        <text x="740" y="160" font-size="36" font-weight="bold" fill="#15181c" text-anchor="middle">つなぐ</text>
+        <text x="740" y="118" font-size="20" fill="#6b7077" text-anchor="middle">④ 共有</text>
+        <circle cx="950" cy="200" r="12" fill="#2b5fd9"/>
+        <text x="950" y="160" font-size="36" font-weight="bold" fill="#15181c" text-anchor="middle">つくる</text>
+        <text x="950" y="118" font-size="20" fill="#6b7077" text-anchor="middle">③ 表現</text>
+      </g>
+      <rect x="60" y="282" width="980" height="84" fill="#f6f6f4"/>
+      <text x="88" y="316" font-size="24" fill="#15181c">右へ進むほど、教員の準備は軽くなり、子どもの活動は増えます。</text>
+      <text x="88" y="350" font-size="24" fill="#6b7077">左が不十分、という意味ではありません。</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 7 ペア -->
+<section class="slide" data-step="2">
+  <div class="mid">
+    <div class="task">
+      <span class="time">3分</span>
+      <span class="lab">近くの席の方と</span>
+      <ol>
+        <li>この1学期で、いちばん多く使ったのはどれでしたか。</li>
+        <li>そのとき、具体的に何をしましたか。（学年・教科・場面）</li>
+      </ol>
+    </div>
+  </div>
+  <div class="note"><span>うまくいかなかった話も、同じくらい聞きたいです。</span></div>
+</section>
+
+<!-- 8 全体共有 -->
+<section class="slide" data-step="2">
+  <div class="mid">
+    <div class="task">
+      <span class="time">4分</span>
+      <span class="lab">全体で共有</span>
+      <ol>
+        <li>お話しいただくのは、4つだけ。<br><span style="font-size:26px; font-weight:400; color:var(--sub)">学年 ／ 教科 ／ 活用の区分 ／ やったこと</span></li>
+        <li>おひとり30秒で結構です。まとめなくて大丈夫です。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 9 確認の問い -->
+<section class="slide" data-step="2">
+  <div class="mid">
+    <span class="eye">確認の問い</span>
+    <div class="huge">その活用で、<br><span class="accent">子どもの何が変わりましたか。</span></div>
+  </div>
+  <div class="note"><span>ここに答えられる活用は、来年も残ると思っています。「試したけれど、ここで止まった」も同じだけ値打ちがあります。</span></div>
+</section>
+
+<!-- 10 実践① -->
+<section class="slide" data-step="3">
+  <span class="eye">実践報告 ①　授業・書く活動</span>
+  <div class="mid">
+    <div class="big">Canvaを使った<br>新聞づくり</div>
+    <div class="lead">用意したのは4つ。操作の下ごしらえ、テンプレート、写真、提出のしかたです。</div>
+  </div>
+  <div class="note">
+    <span><b>Canva</b>＝新聞やポスターの型紙を選んで、文字と写真を差しかえるだけで作れる道具です。</span>
+    <span><b>テンプレート</b>＝あらかじめ形が決まっている型紙のこと。<b>共有ドライブ</b>＝先生どうしで同じファイルを置ける場所。</span>
+  </div>
+</section>
+
+<!-- 11 ▲ -->
+<section class="slide" data-step="3">
+  <span class="eye">やってみて、うまくいかなかったところ</span>
+  <div class="mid">
+    <div class="big">時間がかかりすぎる子が、<br>たくさん出ました。</div>
+    <div class="lead">構成を1対1で一緒に考えてみましたが、いまひとつでした。個別の支援が必要だと、改めて感じています。</div>
+  </div>
+  <div class="note"><span>紙で作ったほうが早かったのか。でも、どちらにしても時間はかかる。いまも悩んでいます。同じところで止まった方は、ぜひ聞かせてください。</span></div>
+</section>
+
+<!-- 12 実践② -->
+<section class="slide" data-step="3">
+  <span class="eye">実践報告 ②　授業・4年 国語</span>
+  <h2>生成AIを使った、書く活動の支援</h2>
+  <div class="fig">
+    <svg viewBox="0 0 1100 250" role="img" aria-label="書く活動を4つの段階に分け、各段階でたずね方を用意していることを示した図">
+      <text x="550" y="34" font-size="24" fill="#6b7077" text-anchor="middle">たずね方は、あらかじめこちらで用意しておく</text>
+      <g>
+        <rect x="60" y="62" width="230" height="96" fill="#fff" stroke="#2b5fd9" stroke-width="3"/>
+        <text x="175" y="104" font-size="30" fill="#2b5fd9" text-anchor="middle" font-weight="bold">①</text>
+        <text x="175" y="140" font-size="26" fill="#15181c" text-anchor="middle">えらぶ</text>
+        <rect x="315" y="62" width="230" height="96" fill="#fff" stroke="#2b5fd9" stroke-width="3"/>
+        <text x="430" y="104" font-size="30" fill="#2b5fd9" text-anchor="middle" font-weight="bold">②</text>
+        <text x="430" y="140" font-size="26" fill="#15181c" text-anchor="middle">しらべる</text>
+        <rect x="570" y="62" width="230" height="96" fill="#fff" stroke="#2b5fd9" stroke-width="3"/>
+        <text x="685" y="104" font-size="30" fill="#2b5fd9" text-anchor="middle" font-weight="bold">③</text>
+        <text x="685" y="140" font-size="26" fill="#15181c" text-anchor="middle">組み立てる</text>
+        <rect x="825" y="62" width="215" height="96" fill="#fff" stroke="#2b5fd9" stroke-width="3"/>
+        <text x="932" y="104" font-size="30" fill="#2b5fd9" text-anchor="middle" font-weight="bold">④</text>
+        <text x="932" y="140" font-size="26" fill="#15181c" text-anchor="middle">直す</text>
+      </g>
+      <g stroke="#b9bcc2" stroke-width="3">
+        <line x1="293" y1="110" x2="312" y2="110"/><line x1="548" y1="110" x2="567" y2="110"/><line x1="803" y1="110" x2="822" y2="110"/>
+      </g>
+      <rect x="60" y="188" width="980" height="52" fill="#f6f6f4"/>
+      <text x="550" y="222" font-size="26" font-weight="bold" fill="#15181c" text-anchor="middle">そのまま写さない ／ 出典を書く　を、手順の中に入れておく</text>
+    </svg>
+  </div>
+  <div class="note">
+    <span><b>生成AI</b>＝文章や案を作ってくれるAIのこと。GeminiやChatGPTなど。</span>
+    <span>子どもには自由に打たせず、<b>用意した文をコピーして貼る</b>ところから始めさせています。</span>
+  </div>
+</section>
+
+<!-- 13 教材資料 -->
+<section class="slide" data-step="4">
+  <h2>そのまま印刷して使える教材資料。</h2>
+  <p style="font-size:24px; line-height:1.7; color:var(--sub); margin-top:14px">登録もログインもいりません。全部で1,300枚以上、解答つきです。</p>
+  <ul class="pts">
+    <li>教科のプリント　<small>国語259枚（読解・言葉・作文・聞き取り）／算数88単元／理科・社会・体育</small></li>
+    <li>支援の資料　<small>通常の学級で使える支援カード 全35枚</small></li>
+    <li>授業と校務の道具　<small>PDF道具箱・社会科ことば辞典378語・ノート用紙・イラスト素材</small></li>
+    <li>実践アイデア集と、教材研究ノート　<small>指導案とワークシートまで付けています</small></li>
+  </ul>
+</section>
+
+<!-- 14 教材資料QR -->
+<section class="slide" data-step="4">
+  <h2>スマホでどうぞ。</h2>
+  <div class="qrs">
+    <div class="q"><img src="../qr/qr_schoolstock.png" alt="教材資料サイトのQRコード"><div class="cap">教材資料サイト</div></div>
+    <div>
+      <div class="big" style="font-size:44px">2学期の最初の単元で使う<br>1枚を決めるところから。</div>
+      <div class="url">a-tozak.github.io/School_Stock/</div>
+    </div>
+  </div>
+  <div class="note"><span>一度に全部見ようとすると疲れます。算数のレベル別演習は、単元ごとに基礎から思考力まで5段階に刷り分けられます。</span></div>
+</section>
+
+<!-- 15 ツール できること -->
+<section class="slide" data-step="5">
+  <span class="eye">先生のPDF道具箱</span>
+  <h2>PDFを、その場で直せます。</h2>
+  <ul class="pts">
+    <li>何枚かのPDFを1つにまとめる　<small>順番の入れ替えも、いらないページの削除もできます</small></li>
+    <li>元の文字を打ち替える　<small>そのPCに入っているフォントが選べるので、本文と字体をそろえられます</small></li>
+    <li>ページ番号を振る／2面付けにする　<small>2面付け＝1枚の紙に2ページ分を並べて印刷すること。冊子づくり用です</small></li>
+  </ul>
+</section>
+
+<!-- 16 ツール 安心 -->
+<section class="slide" data-step="5">
+  <h2>安心して使える理由は、3つです。</h2>
+  <div class="three">
+    <div class="c"><div class="n">1</div><b>通信しません</b><span>処理はすべて、そのPCの中だけで終わります。ファイルはどこにも送られません。</span></div>
+    <div class="c"><div class="n">2</div><b>入れなくていい</b><span>ファイルを1つ落として、ダブルクリックするだけ。管理者権限もいりません。</span></div>
+    <div class="c"><div class="n">3</div><b>無料です</b><span>同僚や他校の先生に、そのままお渡しいただいてかまいません。</span></div>
+  </div>
+  <div class="note"><span><b>HTMLファイル</b>＝ブラウザ（EdgeやChrome）で開くファイルのこと。今回はこれ1つだけで動きます。</span></div>
+</section>
+
+<!-- 17 ツールQR -->
+<section class="slide" data-step="5">
+  <h2>使い方は3つの手順だけ。</h2>
+  <div class="qrs">
+    <div class="q"><img src="../qr/qr_pdftoolbox.png" alt="先生のPDF道具箱のQRコード"><div class="cap">先生のPDF道具箱</div></div>
+    <div>
+      <ul class="pts" style="margin-top:0">
+        <li>落とす　<small>ボタンから pdf-toolbox.html を保存（保存先はダウンロードフォルダ）</small></li>
+        <li>開く　<small>ダブルクリック。開かないときは右クリックからEdgeかChromeで</small></li>
+        <li>入れる　<small>PDFをドラッグ。直すページはダブルクリックで編集画面へ</small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 18 締め -->
+<section class="slide end" data-step="0">
+  <span class="eye">おわりに</span>
+  <div class="huge">2学期にひとつ、<br>やってみることを<br><span class="accent">決めて帰りましょう。</span></div>
+  <div style="margin-top:44px; display:flex; align-items:center; gap:34px">
+    <div class="q" style="border:1px solid var(--ink); padding:12px; width:170px"><img src="../qr/komoda_qr.png" alt="本日の資料ページのQRコード" style="display:block; width:100%"></div>
+    <div style="text-align:left">
+      <div style="font-size:26px; font-weight:700">本日の資料は、ここに残します。</div>
+      <div class="url" style="margin-top:12px">a-tozak.github.io/komoda</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /deck -->
+</div><!-- /stage -->
+
+<div class="ctrl">
+  <button id="prev">← 前</button>
+  <button id="next">次 →</button>
+  <button id="print">PDFで保存</button>
+</div>
+<div class="help">← → で移動　／　クリックで次へ　／　F で全画面</div>
+
+<script>
+const STEPS = [
+  null,
+  {name:'趣旨の確認',      min:'0–3分'},
+  {name:'活用事例の共有',  min:'3–11分'},
+  {name:'実践報告',        min:'11–20分'},
+  {name:'教材資料の紹介',  min:'20–25分'},
+  {name:'ツールの紹介',    min:'25–30分'}
+];
+
+const slides = [...document.querySelectorAll('.slide')];
+
+// 各スライドに「現在地」を差し込む（印刷でも全ページに出るようにHTML側へ入れる）
+slides.forEach((sl, i) => {
+  const step = parseInt(sl.dataset.step, 10);
+  const hud = document.createElement('div');
+  hud.className = 'hud';
+  const dots = STEPS.map((s, n) => {
+    if (n === 0) return '';
+    const cls = n === step ? 'cur' : (step > n ? 'done' : '');
+    return `<i class="${cls}">${n}</i>`;
+  }).join('');
+  const info = step > 0
+    ? `<div class="now">${STEPS[step].name}</div><div class="min">${STEPS[step].min}</div>`
+    : `<div class="now"></div><div class="min"></div>`;
+  hud.innerHTML = `<div class="dots">${dots}</div>${info}<div class="pg">${i+1} / ${slides.length}</div>`;
+  sl.prepend(hud);
+});
+
+let cur = 0;
+const show = n => {
+  cur = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach((s, i) => s.classList.toggle('on', i === cur));
+};
+const fit = () => {
+  const s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+  document.getElementById('deck').style.transform = `scale(${s})`;
+};
+window.addEventListener('resize', fit); fit();
+
+document.getElementById('next').onclick = e => { e.stopPropagation(); show(cur + 1); };
+document.getElementById('prev').onclick = e => { e.stopPropagation(); show(cur - 1); };
+document.getElementById('print').onclick = e => { e.stopPropagation(); window.print(); };
+document.addEventListener('click', () => show(cur + 1));
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(cur + 1); }
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(cur - 1); }
+  if (e.key === 'Home') show(0);
+  if (e.key === 'End') show(slides.length - 1);
+  if (e.key === 'f' || e.key === 'F') {
+    document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+  }
+});
+// URLに #7 のように書くとそのページから開ける（確認用）
+const h = parseInt(location.hash.replace('#',''), 10);
+if (!isNaN(h)) show(h - 1);
+</script>
+</body>
+</html>

@@ -3,6 +3,7 @@
 令和8年7月22日（水）・30分。校内研修の資料ページと配布資料。
 
 - 公開URL: https://a-tozak.github.io/komoda/
+- 投影用スライド: https://a-tozak.github.io/komoda/slides/
 - 本文・図版（SVG）・配布資料はすべて自作。
 - 児童の個人情報・校内資料・教科書紙面は含まない。
 
@@ -24,6 +25,9 @@ styles.css          見た目
 handout/            配布資料（A4両面1枚・白黒印刷前提）
   komoda_handout.html   組版元。ここを直して再生成する
   komoda_handout.pdf    配る現物
+slides/             投影用スライド（16:9・全18枚・HTML）
+  index.html            ←→ で送る／クリックで次へ／F で全画面／「PDFで保存」ボタンあり
+                        #7 のように末尾に番号を付けると、そのページから開ける
 qr/                 QR一式と投影用スライド
   komoda_qr.png/.svg          本ページのQR
   qr_schoolstock.png          教材資料サイトのQR
