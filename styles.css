@@ -104,7 +104,9 @@ ol.steps li::before{content:counter(s); position:absolute; left:0; top:6px; font
 .jc dt:first-child{margin-top:0}
 .jc dd{font-size:13.5px; color:var(--ink); line-height:1.7}
 .jc .act{margin-top:14px}
-@media(max-width:900px){ .jissen{grid-template-columns:1fr} }
+.jissen.c2{grid-template-columns:repeat(2,1fr)}
+.jc .cau{margin-top:14px; padding:11px 14px; background:var(--wash); border-left:3px solid var(--warm); font-size:12.5px; line-height:1.65; color:var(--ink)}
+@media(max-width:900px){ .jissen,.jissen.c2{grid-template-columns:1fr} }
 
 /* おまけ帯 */
 .extra{display:flex; flex-wrap:wrap; gap:18px 30px; align-items:center; justify-content:space-between; border:1px solid var(--line); border-left:4px solid var(--moss); background:var(--paper); padding:22px 26px; margin-top:22px}
