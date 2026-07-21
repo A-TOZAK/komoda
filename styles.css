@@ -99,7 +99,11 @@ ol.steps li::before{content:counter(s); position:absolute; left:0; top:6px; font
 .jc .layer{font-size:11.5px; font-weight:800; letter-spacing:.06em; color:var(--moss); margin-bottom:6px}
 .jc h3{font-size:17.5px; line-height:1.45; margin-bottom:8px}
 .jc p{font-size:13.5px; color:var(--sub)}
+.jc ul.pts{list-style:none; margin-top:12px; border-top:1px solid var(--line); padding-top:10px}
+.jc ul.pts li{font-size:13px; color:var(--ink); line-height:1.6; padding:4px 0 4px 16px; position:relative}
+.jc ul.pts li::before{content:"・"; position:absolute; left:0; color:var(--moss)}
 .jc dl{margin-top:12px; border-top:1px solid var(--line); padding-top:10px; flex:1}
+.jc dt.warn{color:var(--warm)}
 .jc dt{font-size:11.5px; font-weight:800; color:var(--accent); letter-spacing:.04em; margin-top:8px}
 .jc dt:first-child{margin-top:0}
 .jc dd{font-size:13.5px; color:var(--ink); line-height:1.7}

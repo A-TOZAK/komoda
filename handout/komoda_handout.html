@@ -26,13 +26,13 @@ h1{ font-size:16.5pt; font-weight:800; line-height:1.42; margin-top:4mm; letter-
 h1 span.sub2{ display:block; font-size:11pt; font-weight:700; color:#3a3e45; margin-top:1.2mm; letter-spacing:.02em }
 .lead{ font-size:8.8pt; color:#3a3e45; margin-top:2.2mm; line-height:1.62 }
 
-h2{ font-size:11.5pt; font-weight:800; margin-top:3.4mm; padding:1.1mm 0 1.1mm 0; border-bottom:1pt solid #15181c; display:flex; align-items:baseline; gap:2.4mm }
+h2{ font-size:11.5pt; font-weight:800; margin-top:3.6mm; padding:1.1mm 0 1.1mm 0; border-bottom:1pt solid #15181c; display:flex; align-items:baseline; gap:2.4mm }
 h2 .no{ font-family:Georgia,serif; font-size:13pt; color:#3a3e45 }
 h2 .min{ margin-left:auto; font-size:8pt; font-weight:400; color:#5c6067; letter-spacing:.04em }
 h2.first{ margin-top:4.4mm }
 
 /* --- 見取り図 --- */
-.flow{ display:grid; grid-template-columns:repeat(5,1fr); gap:1.6mm; margin-top:3mm }
+.flow{ display:grid; grid-template-columns:repeat(5,1fr); gap:1.6mm; margin-top:2.6mm }
 .flow .s{ border:.6pt solid #b9bdc4; border-top:1.6pt solid #15181c; padding:2mm 2.2mm 2.4mm }
 .flow .s .t{ font-family:Georgia,serif; font-size:7.4pt; color:#5c6067; letter-spacing:.04em }
 .flow .s .n{ font-family:Georgia,serif; font-size:13pt; font-weight:700; line-height:1; margin:.6mm 0 1.2mm }
@@ -40,11 +40,11 @@ h2.first{ margin-top:4.4mm }
 .flow .s p{ font-size:7.4pt; color:#5c6067; line-height:1.5 }
 
 /* --- 4つの型 --- */
-.types{ display:grid; grid-template-columns:repeat(4,1fr); gap:2mm; margin-top:3mm }
+.types{ display:grid; grid-template-columns:repeat(4,1fr); gap:2mm; margin-top:2.6mm }
 .ty{ border:.6pt solid #b9bdc4; padding:2.4mm 2.6mm 2.8mm }
 .ty .k{ font-size:7.4pt; font-weight:800; letter-spacing:.06em; color:#5c6067 }
 .ty h3{ font-size:11.5pt; font-weight:800; margin:.4mm 0 1.2mm }
-.ty p{ font-size:7.6pt; color:#3a3e45; line-height:1.5; min-height:8.6mm }
+.ty p{ font-size:7.6pt; color:#3a3e45; line-height:1.5; min-height:7.6mm }
 .ty ul{ list-style:none; border-top:.6pt solid #dcdee2; padding-top:1.4mm; margin-top:1.2mm }
 .ty li{ font-size:7.6pt; line-height:1.5; padding-left:2.6mm; position:relative; margin-bottom:.5mm }
 .ty li::before{ content:"・"; position:absolute; left:-.2mm }
@@ -52,7 +52,7 @@ h2.first{ margin-top:4.4mm }
 .ty .chk .box{ width:3.4mm; height:3.4mm; border:.9pt solid #15181c; display:inline-block }
 
 /* --- 話す順番 --- */
-.talk{ display:grid; grid-template-columns:repeat(3,1fr); gap:2mm; margin-top:3mm }
+.talk{ display:grid; grid-template-columns:repeat(3,1fr); gap:2mm; margin-top:2.4mm }
 .talk .t{ border:.6pt solid #b9bdc4; background:#f4f4f2; padding:2.4mm 2.8mm 2.6mm }
 .talk .t .hd{ display:flex; align-items:center; gap:1.8mm; margin-bottom:1.2mm }
 .talk .t .bd{ width:5mm; height:5mm; background:#15181c; color:#fff; font-family:Georgia,serif; font-size:8.4pt; font-weight:700; display:flex; align-items:center; justify-content:center; flex:none }
@@ -60,7 +60,7 @@ h2.first{ margin-top:4.4mm }
 .talk .t .min{ margin-left:auto; font-size:7.4pt; color:#5c6067 }
 .talk .t p{ font-size:8pt; line-height:1.55; color:#3a3e45 }
 
-.callout{ margin-top:2.6mm; border:1pt solid #15181c; padding:2.6mm 3.4mm; display:flex; align-items:center; gap:3mm }
+.callout{ margin-top:2.2mm; border:1pt solid #15181c; padding:2.6mm 3.4mm; display:flex; align-items:center; gap:3mm }
 .callout .lb{ font-size:7.6pt; font-weight:800; letter-spacing:.08em; color:#fff; background:#15181c; padding:1.4mm 2.4mm; flex:none; white-space:nowrap }
 .callout .q{ font-size:12.5pt; font-weight:800; line-height:1.4 }
 .callout .sub{ font-size:7.8pt; color:#5c6067; margin-top:.8mm; line-height:1.5 }
@@ -75,13 +75,17 @@ h2.first{ margin-top:4.4mm }
 .memo-line .ln{ border-bottom:.6pt dotted #9aa0a8; height:5.4mm }
 
 /* --- 実践3つ --- */
-.jissen{ display:grid; grid-template-columns:repeat(2,1fr); gap:2.4mm; margin-top:2.4mm }
+.jissen{ display:grid; grid-template-columns:repeat(2,1fr); gap:2.4mm; margin-top:2mm }
 .jc{ border:.6pt solid #b9bdc4; border-top:1.6pt solid #15181c; padding:2.1mm 2.4mm 2.2mm }
 .jc .layer{ font-size:7.4pt; font-weight:800; letter-spacing:.08em; color:#5c6067 }
 .jc h3{ font-size:9.5pt; font-weight:800; line-height:1.35; margin:.5mm 0 1.1mm }
 .jc p{ font-size:7.6pt; line-height:1.47; color:#3a3e45 }
-.jc dl{ margin-top:1.3mm; border-top:.6pt solid #dcdee2; padding-top:1.1mm }
-.jc dt{ font-size:7.4pt; font-weight:800; letter-spacing:.04em; margin-top:1.2mm }
+.jc ul.pts{ list-style:none; margin-top:1.2mm; border-top:.6pt solid #dcdee2; padding-top:1.1mm }
+.jc ul.pts li{ font-size:7.6pt; line-height:1.44; padding:.3mm 0 .3mm 2.6mm; position:relative }
+.jc ul.pts li::before{ content:"・"; position:absolute; left:-.2mm }
+.jc dt.warn{ color:#a8481f }
+.jc dl{ margin-top:1.2mm; border-top:.6pt solid #dcdee2; padding-top:1.1mm }
+.jc dt{ font-size:7.2pt; font-weight:800; letter-spacing:.04em; margin-top:1mm }
 .jc dt:first-child{ margin-top:0 }
 .jc dd{ font-size:7.6pt; line-height:1.42 }
 .jc .u{ margin-top:1.3mm; font-family:"SF Mono",Menlo,Consolas,monospace; font-size:6.6pt; color:#5c6067; word-break:break-all; border-top:.6pt solid #dcdee2; padding-top:1.2mm }
@@ -108,15 +112,26 @@ h2.first{ margin-top:4.4mm }
 .steps3 div{ font-size:7.3pt; line-height:1.4 }
 .steps3 b{ display:block; font-size:7.4pt; font-weight:800; letter-spacing:.04em; margin-bottom:.4mm }
 
+/* --- 記入欄（おもて面に集約） --- */
+.fillbox{ margin-top:2.2mm; border:1.4pt solid #15181c; padding:2.2mm 3.2mm 2.4mm }
+.fillbox .ttl{ display:flex; align-items:baseline; gap:2.4mm; border-bottom:.6pt solid #dcdee2; padding-bottom:1mm; margin-bottom:1.6mm }
+.fillbox .ttl h3{ font-size:11pt; font-weight:800 }
+.fillbox .ttl .sub{ font-size:7.6pt; color:#5c6067; margin-left:auto }
+.fillbox .lb{ font-size:7.6pt; font-weight:800; color:#3a3e45; margin-bottom:.8mm }
+.fillbox .lb span{ font-weight:400; color:#5c6067 }
+.fillbox .ln{ border-bottom:.6pt solid #9aa0a8; height:5.2mm }
+.fillbox .ln.d{ border-bottom:.6pt dotted #9aa0a8 }
+.fillbox .row{ display:grid; grid-template-columns:1fr 46mm; gap:4mm; margin-top:2mm }
+
 /* --- 明日の一手 --- */
-.next{ margin-top:2.0mm; border:1.4pt solid #15181c; padding:2.6mm 3.2mm 2.8mm }
+.next{ margin-top:1.8mm; border:1.4pt solid #15181c; padding:2.2mm 3.2mm 2.4mm }
 .next .ttl{ display:flex; align-items:baseline; gap:2.4mm; border-bottom:.6pt solid #dcdee2; padding-bottom:1.1mm; margin-bottom:1.8mm }
 .next .ttl h3{ font-size:11.5pt; font-weight:800 }
 .next .ttl .sub{ font-size:7.6pt; color:#5c6067; margin-left:auto }
 .next .row{ display:grid; grid-template-columns:1fr 42mm; gap:4mm }
 .next .lb{ font-size:7.4pt; font-weight:800; color:#5c6067; margin-bottom:.8mm }
-.next .ln{ border-bottom:.6pt solid #9aa0a8; height:5.6mm }
-.next .ln.s{ height:5.6mm }
+.next .ln{ border-bottom:.6pt solid #9aa0a8; height:5mm }
+.next .ln.s{ height:5mm }
 
 /* --- footer --- */
 .foot{ position:absolute; left:12mm; right:12mm; bottom:8mm; border-top:.6pt solid #b9bdc4; padding-top:2mm; display:flex; align-items:center; gap:3mm }
@@ -137,7 +152,7 @@ h2.first{ margin-top:4.4mm }
   </div>
 
   <h1>ICT活用事例の共有と、教材資料・ツールの紹介<span class="sub2">本日の到達点：「明日ひとつ、やってみること」が定まった状態で終えること</span></h1>
-  <p class="lead">各ツールの基本的な操作については、先生方も子どもたちも、ある程度身についてきたと考えています。だからこそ本研修では、まず校内での活用の様子を持ち寄って共有し、そのうえで実践の報告と、そのまま使える教材資料・ツールの紹介を行います。裏面に記入欄を設けています。</p>
+  <p class="lead">各ツールの基本的な操作については、先生方も子どもたちも、ある程度身についてきたと考えています。だからこそ本研修では、まず校内での活用の様子を持ち寄って共有し、そのうえで実践の報告と、そのまま使える教材資料・ツールの紹介を行います。記入欄はこの面の下にあります。</p>
 
   <div class="flow">
     <div class="s"><div class="t">0–3分</div><div class="n">1</div><h3>趣旨の確認</h3><p>本日の流れと、持ち帰るものの確認。</p></div>
@@ -200,23 +215,23 @@ h2.first{ margin-top:4.4mm }
     </div>
   </div>
 
-  <div class="takeaway">
-    <div class="tw">
-      <div class="k">本日紹介するもの　①</div>
-      <h3>教材資料（プリント・支援・道具）</h3>
-      <p>登録不要・無料。開いて選び、印刷するだけで使えます。解答付きで1,300枚以上。裏面にQRコードがあります。</p>
+  <div class="fillbox">
+    <div class="ttl"><h3>記入欄</h3><span class="sub">本日の到達点は、下の「明日ひとつ」が定まって終えることです。</span></div>
+    <div class="lb">① 参考になった、ほかの先生の活用</div>
+    <div class="ln d"></div>
+    <div class="row">
+      <div>
+        <div class="lb">② 明日ひとつ、やってみること <span>／ 大きいことでなくて結構です</span></div>
+        <div class="ln"></div>
+        <div class="ln"></div>
+      </div>
+      <div>
+        <div class="lb">いつ（日にち・時間）</div>
+        <div class="ln"></div>
+        <div class="lb" style="margin-top:1.6mm">誰かに伝えるなら（相手）</div>
+        <div class="ln"></div>
+      </div>
     </div>
-    <div class="tw">
-      <div class="k">本日紹介するもの　②</div>
-      <h3>先生のPDF道具箱</h3>
-      <p>結合・並べ替え・文字の打ち替え。導入作業も通信も不要です。裏面にQRコードがあります。</p>
-    </div>
-  </div>
-
-  <div class="memo-line">
-    <div class="ttl">参考になった、ほかの先生の活用</div>
-    <div class="ln"></div>
-    <div class="ln"></div>
   </div>
 
   <div class="foot">
@@ -230,7 +245,7 @@ h2.first{ margin-top:4.4mm }
 <div class="page">
   <div class="head">
     <div class="sch">令和8年度　菰田小学校　校内研修<span>ICT活用</span></div>
-    <div class="date">裏面 ／ 実践報告と、紹介する資料・ツール</div>
+    <div class="date">裏面 ／ 実践報告と、紹介する資料・ツール<br>記入欄はおもて面の下にあります</div>
   </div>
 
   <h2 class="first"><span class="no">2</span>実践報告<span class="min">11–20分</span></h2>
@@ -239,14 +254,22 @@ h2.first{ margin-top:4.4mm }
     <div class="jc">
       <div class="layer">授業　書く活動</div>
       <h3>Canvaを使った新聞づくり</h3>
-      <p>新聞づくりは、清書と割りつけに時間がかかります。手書きだと書き直しが大変なぶん、途中で直すことをためらう児童が出ます。テンプレートを使うと紙面の体裁が先に整うため、見出しの言葉や記事の順序といった中身の検討に時間を回せます。</p>
+      <p>操作でつまずかないよう準備を整えたうえで、新聞づくりをCanvaで行いました。用意したのは次の4点です。</p>
+      <ul class="pts">
+        <li>基本的な操作で困らないようにしておく</li>
+        <li>テンプレートは、用意した中から選ばせる</li>
+        <li>写真は共有ドライブに入れ、Classroomから選んで挿入できるようにする</li>
+        <li>提出はPDFに書き出させ、ロイロノートに出させる</li>
+      </ul>
       <dl>
-        <dt>この形にした理由</dt>
-        <dd>書き直しの負担が下がると、推敲が現実的になる。読み手を意識して直す経験は、書く力の中心にあたる。</dd>
-        <dt>取り入れる場合の第一歩</dt>
-        <dd>テンプレートは教員側で1つに決めて配る。自由に選ばせると、選ぶだけで1時間が終わる。</dd>
+        <dt>よかった点</dt>
+        <dd>PDF提出だと、誰がどこまで進んでいるかがひと目で分かる。掲示用に印刷するのも楽。</dd>
+        <dt class="warn">▲ 悩んでいるところ</dt>
+        <dd>時間がかかりすぎる児童がたくさん出た。構成を1対1で考えてみたがいまひとつで、個別の支援が必要だと改めて感じた。紙のほうが早かったかとも思うが、どちらにしても時間はかかる。</dd>
+        <dt>それでも、一度は</dt>
+        <dd>この形でまとめる経験があると、高学年で「Canvaでまとめる」という選択肢が生まれる。</dd>
       </dl>
-      <div class="cau"><b>※</b> 実際の運用はロイロノートと組み合わせています。児童の作品を含むため資料ページには掲載していません。当日、画面でご覧いただきます。</div>
+      <div class="cau"><b>※</b> 運用はロイロノートと組み合わせています。児童の作品を含むため資料ページには載せていません。当日、画面でご覧いただきます。</div>
     </div>
     <div class="jc">
       <div class="layer">授業　4年 国語</div>
@@ -303,23 +326,6 @@ h2.first{ margin-top:4.4mm }
         <div><b>1｜保存する</b>ボタンから pdf-toolbox.html を保存（ダウンロードフォルダ）。</div>
         <div><b>2｜開く</b>ダブルクリック。開かない場合は右クリックからEdgeかChromeで。</div>
         <div><b>3｜読み込む</b>PDFをドラッグ。修正するページはダブルクリックで編集画面へ。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="next">
-    <div class="ttl"><h3>明日ひとつ、やってみること</h3><span class="sub">大きいことでなくて結構です。定めて終えることを、本日の到達点とします。</span></div>
-    <div class="row">
-      <div>
-        <div class="lb">やること</div>
-        <div class="ln"></div>
-        <div class="ln"></div>
-      </div>
-      <div>
-        <div class="lb">いつ（日にち・時間）</div>
-        <div class="ln s"></div>
-        <div class="lb" style="margin-top:1.6mm">誰かに伝えるなら（相手）</div>
-        <div class="ln s"></div>
       </div>
     </div>
   </div>
