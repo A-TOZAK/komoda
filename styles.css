@@ -1,7 +1,7 @@
-/* LiFE with 研修サイト 共有スタイル（菰田小・ICT活用の共有と持ち帰り） — 高田小・立岩小と同じデザイントークン */
+/* 菰田小学校 校内研修（ICT活用）資料ページ 共有スタイル */
 :root{
   --ink:#15181c; --black:#0e0f11; --paper:#ffffff; --wash:#f6f6f4;
-  --line:#e6e6e3; --sub:#767b83; --accent:#2b5fd9; --moss:#33513f;
+  --line:#e6e6e3; --sub:#767b83; --accent:#22406e; --moss:#33513f;
   --warm:#c05a2b; /* 注意・補足の暖色（限定使用） */
   --font-ja:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
   --font-en:Georgia,"Times New Roman",serif;
@@ -17,8 +17,9 @@ img{max-width:100%}
 
 .wrap{max-width:var(--wrap); margin:0 auto; padding:0 24px}
 section{padding:70px 0}
-.eyebrow{font-family:var(--font-en); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--moss); font-weight:700; margin-bottom:14px; display:flex; align-items:center; gap:10px}
-.eyebrow::before{content:""; width:22px; height:2px; background:var(--moss); display:inline-block}
+.secno{display:inline-grid; place-items:center; width:1.6em; height:1.6em; border:1.5px solid var(--accent); color:var(--accent); font-family:var(--font-en); font-weight:700; font-size:.62em; margin-right:.62em; vertical-align:.14em; flex:none}
+.kicker-ja{font-size:13px; letter-spacing:.14em; color:var(--sub); font-weight:700; margin-bottom:16px}
+.sec-h{display:flex; align-items:baseline; margin-bottom:2px}
 h1{font-size:clamp(28px,4.4vw,44px); line-height:1.28; color:var(--black); font-weight:800}
 h2{font-size:clamp(24px,3.3vw,33px); line-height:1.35; color:var(--black); font-weight:800; letter-spacing:.01em}
 h3{font-size:18.5px; color:var(--black); font-weight:800; margin-bottom:6px}
@@ -29,7 +30,6 @@ h3{font-size:18.5px; color:var(--black); font-weight:800; margin-bottom:6px}
 header.bar{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:saturate(1.4) blur(8px); border-bottom:1px solid var(--line)}
 .bar .wrap{display:flex; align-items:center; justify-content:space-between; height:56px}
 .brand{display:flex; align-items:baseline; gap:9px; font-weight:800; color:var(--black); letter-spacing:.02em}
-.brand .with{font-family:var(--font-en); font-style:italic; color:var(--moss); font-weight:400; font-size:14px}
 .nav{display:flex; gap:20px; font-size:13.5px; font-weight:700}
 .nav a{color:var(--sub)}
 .nav a.active,.nav a:hover{color:var(--ink); text-decoration:none}
@@ -37,13 +37,10 @@ header.bar{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92);
 @media(max-width:860px){ .nav{display:none} }
 
 /* hero */
-.hero{padding:66px 0 46px; border-bottom:1px solid var(--line)}
-.kicker{font-family:var(--font-en); letter-spacing:.16em; text-transform:uppercase; font-size:13px; color:var(--sub); margin-bottom:22px}
-.kicker b{color:var(--accent); font-weight:700}
-@media(max-width:480px){ .kicker{font-size:10.5px; letter-spacing:.12em} }
-.hero h1{font-size:clamp(32px,6vw,58px); line-height:1.24; letter-spacing:.005em}
+.hero{padding:54px 0 42px; border-bottom:2px solid var(--ink)}
+.hero h1{font-size:clamp(27px,4.4vw,42px); line-height:1.34; letter-spacing:.01em}
 .hero h1 .hl{color:var(--accent)}
-.hero .tagsub{margin-top:20px; font-size:18px; max-width:40em; color:var(--ink)}
+.hero .tagsub{margin-top:20px; font-size:16.5px; max-width:44em; color:var(--ink)}
 .hero .meta{margin-top:30px; display:flex; flex-wrap:wrap; gap:8px 26px; font-size:14.5px; color:var(--sub); align-items:center}
 .hero .meta b{color:var(--ink)}
 
@@ -72,7 +69,7 @@ header.bar{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92);
 /* 4つの型 */
 .types{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:34px}
 .types .ty{border:1px solid var(--line); border-top:3px solid var(--moss); background:var(--paper); padding:20px 18px 22px}
-.types .ty .k{font-family:var(--font-en); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--moss); font-weight:700}
+.types .ty .k{font-size:12px; letter-spacing:.08em; color:var(--moss); font-weight:800}
 .types .ty h3{font-size:19px; margin:6px 0 8px}
 .types .ty p{font-size:13.5px; color:var(--sub)}
 .types .ty ul{list-style:none; margin-top:10px; border-top:1px solid var(--line); padding-top:10px}
@@ -111,7 +108,7 @@ ol.steps li::before{content:counter(s); position:absolute; left:0; top:6px; font
 
 /* おまけ帯 */
 .extra{display:flex; flex-wrap:wrap; gap:18px 30px; align-items:center; justify-content:space-between; border:1px solid var(--line); border-left:4px solid var(--moss); background:var(--paper); padding:22px 26px; margin-top:22px}
-.extra .ex-k{font-family:var(--font-en); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--moss); font-weight:700; margin-bottom:6px}
+.extra .ex-k{font-size:12px; letter-spacing:.06em; color:var(--moss); font-weight:800; margin-bottom:6px}
 .extra p{font-size:14.5px; color:var(--ink); max-width:44em; margin:0}
 .band .extra{background:var(--paper)}
 
@@ -119,7 +116,7 @@ ol.steps li::before{content:counter(s); position:absolute; left:0; top:6px; font
 .shelf{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px}
 .sh{border:1px solid var(--line); border-top:3px solid var(--moss); padding:18px 18px 20px; background:var(--paper); display:flex; flex-direction:column; color:inherit}
 a.sh:hover{text-decoration:none; background:var(--wash)}
-.sh .tag{font-size:11.5px; font-weight:800; letter-spacing:.04em; color:var(--moss); margin-bottom:8px}
+.sh .tag{font-family:var(--font-en); font-size:13px; font-weight:700; letter-spacing:.04em; color:var(--moss); margin-bottom:6px}
 .sh h3{font-size:17px; line-height:1.4; margin-bottom:8px}
 .sh p{font-size:13.5px; color:var(--sub); flex:1}
 .sh .go{margin-top:12px; font-size:13px; font-weight:700; color:var(--accent)}
@@ -142,7 +139,7 @@ a.sh:hover{text-decoration:none; background:var(--wash)}
 .tbl-scroll{overflow-x:auto}
 .tools{width:100%; border-collapse:collapse; margin-top:26px; font-size:14.5px}
 .tools th,.tools td{text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); vertical-align:top}
-.tools thead th{font-size:12px; letter-spacing:.08em; color:var(--sub); text-transform:uppercase; font-family:var(--font-en); border-bottom:2px solid var(--ink)}
+.tools thead th{font-size:12px; letter-spacing:.06em; color:var(--sub); font-weight:800; border-bottom:2px solid var(--ink)}
 .tools td.name{font-weight:800; color:var(--black); white-space:nowrap}
 @media(max-width:600px){ .tools{font-size:13px} .tools th,.tools td{padding:11px 10px} }
 
@@ -167,16 +164,16 @@ a.sh:hover{text-decoration:none; background:var(--wash)}
 /* connect */
 .connect{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px}
 .connect .c{border:1px solid var(--line); padding:22px; text-align:center; background:var(--paper)}
-.connect .c .k{font-family:var(--font-en); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--sub); font-weight:700}
+.connect .c .k{font-size:12px; letter-spacing:.06em; color:var(--sub); font-weight:800}
 .connect .c h3{margin:8px 0 6px}
 .connect .c p{font-size:13.5px; color:var(--sub)}
 @media(max-width:760px){ .connect{grid-template-columns:1fr} }
 
 /* buttons */
 .btn{display:inline-block; font-weight:800; font-size:14.5px; padding:11px 22px; border:1.5px solid var(--accent); color:var(--accent); background:var(--paper); border-radius:4px; white-space:nowrap}
-.btn:hover{text-decoration:none; background:#eef2fd}
+.btn:hover{text-decoration:none; background:#eceff5}
 .btn.primary{background:var(--accent); color:#fff}
-.btn.primary:hover{background:#2450be}
+.btn.primary:hover{background:#182f52}
 .btn.sm{font-size:13px; padding:8px 16px}
 @media(max-width:600px){ .btn{width:100%; text-align:center} .take .act .btn,.jc .act .btn{width:auto} }
 
@@ -186,26 +183,25 @@ a.sh:hover{text-decoration:none; background:var(--wash)}
 .fig figcaption{font-size:13px; color:var(--sub); margin-top:12px; text-align:center}
 .band .fig{background:var(--paper)}
 
-/* closing quote */
-.closing{text-align:center; padding:80px 0}
-.closing blockquote{font-size:clamp(22px,3.4vw,32px); line-height:1.55; font-weight:800; color:var(--black); max-width:20em; margin:0 auto}
-.closing .by{margin-top:20px; color:var(--sub); font-size:14px}
+/* 結び */
+.owari{border:1px solid var(--line); border-top:3px solid var(--ink); background:var(--paper); padding:26px 28px; margin-top:30px}
+.owari h3{font-size:18px; margin-bottom:8px}
+.owari p{font-size:15px; color:var(--ink); max-width:48em}
 
-/* author */
-.author{display:flex; gap:34px; align-items:flex-start; margin-top:24px}
-.author img{width:150px; height:150px; object-fit:cover; border:1px solid var(--line); flex:none}
-.author-name{font-size:22px; color:var(--black); margin-bottom:10px}
-.author-name span{font-family:var(--font-en); font-weight:400; font-size:14px; color:var(--sub); margin-left:8px; letter-spacing:.03em}
-.author-body p{font-size:15px; color:var(--ink); max-width:44em; margin:0}
-.author-links{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px 20px; font-size:14px; font-weight:700}
-@media(max-width:640px){ .author{flex-direction:column; gap:18px} .author img{width:110px; height:110px} }
+/* 担当・問い合わせ */
+.tanto{border:1px solid var(--line); background:var(--wash); padding:22px 26px; margin-top:26px; display:grid; grid-template-columns:repeat(2,1fr); gap:8px 34px}
+.tanto .r{font-size:15px}
+.tanto .r .l{font-size:12px; font-weight:800; color:var(--sub); letter-spacing:.06em; display:block; margin-bottom:2px}
+@media(max-width:640px){ .tanto{grid-template-columns:1fr} }
+
 
 /* footer + sitemap */
 footer{border-top:1px solid var(--line); padding:44px 0 30px; font-size:13px; color:var(--sub)}
 .site-map{display:grid; grid-template-columns:1.1fr 1fr 1fr; gap:24px 34px; padding-bottom:28px; border-bottom:1px solid var(--line)}
 .sm-col{display:flex; flex-direction:column; gap:7px}
-.sm-h{font-family:var(--font-en); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--moss); font-weight:700; margin-bottom:4px}
+.sm-h{font-size:12px; letter-spacing:.06em; color:var(--moss); font-weight:800; margin-bottom:4px}
 .sm-col a{color:var(--sub); font-size:13.5px}
+.sm-col span{color:var(--sub); font-size:13.5px}
 .sm-col a:hover{color:var(--ink)}
 .foot-base{display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between; align-items:center; padding-top:22px}
 .foot-base .lw{font-weight:800; color:var(--ink)}

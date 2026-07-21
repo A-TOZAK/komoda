@@ -17,13 +17,13 @@ body{
 
 /* --- header --- */
 .head{ display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1.6pt solid #15181c; padding-bottom:2.2mm }
-.head .sch{ font-size:10pt; font-weight:800; letter-spacing:.06em }
+.head .sch{ font-size:9.6pt; font-weight:800; letter-spacing:.06em }
 .head .sch span{ font-weight:400; color:#5c6067; margin-left:2mm; letter-spacing:.02em }
 .head .date{ font-size:8.6pt; color:#5c6067; text-align:right; line-height:1.5 }
 .head .date b{ color:#15181c }
 
-h1{ font-size:19pt; font-weight:800; line-height:1.3; margin-top:4.2mm; letter-spacing:.01em }
-h1 em{ font-style:normal; border-bottom:2.4pt solid #15181c; padding-bottom:.4mm }
+h1{ font-size:16.5pt; font-weight:800; line-height:1.42; margin-top:4mm; letter-spacing:.01em }
+h1 span.sub2{ display:block; font-size:11pt; font-weight:700; color:#3a3e45; margin-top:1.2mm; letter-spacing:.02em }
 .lead{ font-size:8.8pt; color:#3a3e45; margin-top:2.2mm; line-height:1.62 }
 
 h2{ font-size:11.5pt; font-weight:800; margin-top:4.0mm; padding:1.1mm 0 1.1mm 0; border-bottom:1pt solid #15181c; display:flex; align-items:baseline; gap:2.4mm }
@@ -42,7 +42,7 @@ h2.first{ margin-top:4.4mm }
 /* --- 4つの型 --- */
 .types{ display:grid; grid-template-columns:repeat(4,1fr); gap:2mm; margin-top:3mm }
 .ty{ border:.6pt solid #b9bdc4; padding:2.4mm 2.6mm 2.8mm }
-.ty .k{ font-family:Georgia,serif; font-size:7pt; letter-spacing:.16em; color:#5c6067; text-transform:uppercase }
+.ty .k{ font-size:7.4pt; font-weight:800; letter-spacing:.06em; color:#5c6067 }
 .ty h3{ font-size:11.5pt; font-weight:800; margin:.4mm 0 1.2mm }
 .ty p{ font-size:7.6pt; color:#3a3e45; line-height:1.5; min-height:8.6mm }
 .ty ul{ list-style:none; border-top:.6pt solid #dcdee2; padding-top:1.4mm; margin-top:1.2mm }
@@ -61,18 +61,18 @@ h2.first{ margin-top:4.4mm }
 .talk .t p{ font-size:8pt; line-height:1.55; color:#3a3e45 }
 
 .callout{ margin-top:3mm; border:1pt solid #15181c; padding:3mm 3.4mm; display:flex; align-items:center; gap:3mm }
-.callout .lb{ font-family:Georgia,serif; font-size:7pt; letter-spacing:.14em; color:#fff; background:#15181c; padding:1.2mm 2mm; flex:none; white-space:nowrap }
+.callout .lb{ font-size:7.6pt; font-weight:800; letter-spacing:.08em; color:#fff; background:#15181c; padding:1.4mm 2.4mm; flex:none; white-space:nowrap }
 .callout .q{ font-size:12.5pt; font-weight:800; line-height:1.4 }
 .callout .sub{ font-size:7.8pt; color:#5c6067; margin-top:.8mm; line-height:1.5 }
 
-.takeaway{ display:grid; grid-template-columns:repeat(2,1fr); gap:2mm; margin-top:3mm }
+.takeaway{ display:grid; grid-template-columns:repeat(2,1fr); gap:2mm; margin-top:2.4mm }
 .tw{ border:.6pt solid #b9bdc4; border-left:1.6pt solid #15181c; padding:2.2mm 2.8mm 2.4mm }
 .tw .k{ font-size:7.2pt; font-weight:800; letter-spacing:.06em; color:#5c6067 }
 .tw h3{ font-size:10pt; font-weight:800; margin:.4mm 0 .8mm }
 .tw p{ font-size:7.8pt; line-height:1.5; color:#3a3e45 }
-.memo-line{ margin-top:2.6mm; border:.6pt solid #b9bdc4; padding:2.6mm 3mm }
+.memo-line{ margin-top:2.2mm; border:.6pt solid #b9bdc4; padding:2.4mm 3mm 2.6mm }
 .memo-line .ttl{ font-size:8.4pt; font-weight:800; margin-bottom:1.8mm }
-.memo-line .ln{ border-bottom:.6pt dotted #9aa0a8; height:7.4mm }
+.memo-line .ln{ border-bottom:.6pt dotted #9aa0a8; height:6.2mm }
 
 /* --- 実践3つ --- */
 .jissen{ display:grid; grid-template-columns:repeat(3,1fr); gap:2mm; margin-top:2.4mm }
@@ -130,96 +130,96 @@ h2.first{ margin-top:4.4mm }
 <!-- ================= おもて ================= -->
 <div class="page">
   <div class="head">
-    <div class="sch">菰田小学校 校内研修<span>ICT活用</span></div>
-    <div class="date">2026年7月22日（水）／ <b>30分</b><br>外﨑 顯博（ICT教育担当）</div>
+    <div class="sch">令和8年度　菰田小学校　校内研修<span>ICT活用</span></div>
+    <div class="date">令和8年7月22日（水）／ <b>30分</b><br>担当　外﨑 顯博（ICT教育担当）</div>
   </div>
 
-  <h1>「使える」の次は、<em>分け合う</em>。</h1>
-  <p class="lead">操作の研修は、ひとまず卒業でいいと思っています。今日は、もう校内でやっている使い方を持ち寄って、そこに私の実践と、無料で使える教材の棚と道具をひとつずつ足していきます。ゴールは「明日ひとつ、やってみること」が決まって帰ることです。</p>
+  <h1>ICT活用事例の共有と、教材資料・ツールの紹介<span class="sub2">本日の到達点：「明日ひとつ、やってみること」が定まった状態で終えること</span></h1>
+  <p class="lead">基本的な操作については、おおむね身についていると考えています。そこで本研修では、まず現在の活用の様子を全体で共有し、そのうえで実践の報告と、そのまま使える教材資料・ツールの紹介を行います。裏面に記入欄を設けています。</p>
 
   <div class="flow">
-    <div class="s"><div class="t">0–3 min</div><div class="n">1</div><h3>今日やること</h3><p>見取り図の確認。持ち帰るものは2つ。</p></div>
-    <div class="s"><div class="t">3–11 min</div><div class="n">2</div><h3>今、どう使ってる？</h3><p>ペアで3分、そのあと全体で。</p></div>
-    <div class="s"><div class="t">11–20 min</div><div class="n">3</div><h3>私の実践から3つ</h3><p>授業で・気になる子に・校務で。</p></div>
-    <div class="s"><div class="t">20–25 min</div><div class="n">4</div><h3>教材の棚</h3><p>School Stock。無料・登録不要。</p></div>
-    <div class="s"><div class="t">25–30 min</div><div class="n">5</div><h3>PDF道具箱</h3><p>結合と、文字の打ち替え。</p></div>
+    <div class="s"><div class="t">0–3分</div><div class="n">1</div><h3>趣旨の確認</h3><p>本日の流れと、持ち帰るものの確認。</p></div>
+    <div class="s"><div class="t">3–11分</div><div class="n">2</div><h3>活用事例の共有</h3><p>近くの席の方と3分、そのあと全体で。</p></div>
+    <div class="s"><div class="t">11–20分</div><div class="n">3</div><h3>実践報告</h3><p>授業・支援・校務の3つの場面から。</p></div>
+    <div class="s"><div class="t">20–25分</div><div class="n">4</div><h3>教材資料の紹介</h3><p>印刷してそのまま使える資料の所在。</p></div>
+    <div class="s"><div class="t">25–30分</div><div class="n">5</div><h3>ツールの紹介</h3><p>PDFの結合・修正ができる校務用ツール。</p></div>
   </div>
 
-  <h2><span class="no">1</span>今、どう使ってる？<span class="min">ペア3分 ＋ 全体5分</span></h2>
-  <p class="lead" style="margin-top:2mm">研修でいちばん参考になるのは、遠くの学校の実践よりも、となりの教室でもう起きていることです。話しやすいように、使い方を4つの型に分けました。<b>自分がいちばん使った型に □ をつけてください。</b></p>
+  <h2><span class="no">1</span>活用事例の共有<span class="min">ペア3分 ＋ 全体5分</span></h2>
+  <p class="lead" style="margin-top:2mm">最も参考になるのは、遠方の実践よりも、同じ校舎の中ですでに行われている活用です。話しやすくするため、活用の場面を4つに整理しました。<b>ご自身が最も多く使った区分に □ をつけてください。</b></p>
 
   <div class="types">
     <div class="ty">
-      <div class="k">Show</div><h3>見せる</h3>
-      <p>先生が映して、子どもが見る使い方。</p>
-      <ul><li>教科書や資料を大きく映す</li><li>手元や作品を映して見る</li><li>今なにをする時間かを出す</li></ul>
-      <div class="chk"><span class="box"></span>わたしはここ</div>
+      <div class="k">① 提示</div><h3>見せる</h3>
+      <p>教員が映し、児童が見る使い方。</p>
+      <ul><li>教科書や資料を大きく映す</li><li>手元や作品を映して見る</li><li>活動の指示をスライドで示す</li></ul>
+      <div class="chk"><span class="box"></span>この区分</div>
     </div>
     <div class="ty">
-      <div class="k">Collect</div><h3>集める</h3>
-      <p>子どもの考えを、まとめて手元に持ってくる。</p>
-      <ul><li>Formsでふりかえりを集める</li><li>挙手より早く全員の考えを見る</li><li>健康観察・アンケート</li></ul>
-      <div class="chk"><span class="box"></span>わたしはここ</div>
+      <div class="k">② 把握</div><h3>集める</h3>
+      <p>児童の考えを、まとめて手元に集める。</p>
+      <ul><li>Formsで振り返りを集める</li><li>挙手より早く全員の考えを見る</li><li>健康観察・アンケート</li></ul>
+      <div class="chk"><span class="box"></span>この区分</div>
     </div>
     <div class="ty">
-      <div class="k">Create</div><h3>つくる</h3>
-      <p>子どもが自分の手で、書く・撮る・まとめる。</p>
-      <ul><li>スライドで発表資料をつくる</li><li>写真や動画で記録を残す</li><li>書いて、書き直す</li></ul>
-      <div class="chk"><span class="box"></span>わたしはここ</div>
+      <div class="k">③ 表現</div><h3>つくる</h3>
+      <p>児童が自分の手で、書く・撮る・まとめる。</p>
+      <ul><li>スライドで発表資料を作成する</li><li>写真や動画で記録を残す</li><li>文書で書き、書き直す</li></ul>
+      <div class="chk"><span class="box"></span>この区分</div>
     </div>
     <div class="ty">
-      <div class="k">Connect</div><h3>つなぐ</h3>
-      <p>配る・集める・一緒に書く。人をつなぐ使い方。</p>
-      <ul><li>Classroomで配って集める</li><li>1つのファイルをみんなで書く</li><li>休んでいる子とつながる</li></ul>
-      <div class="chk"><span class="box"></span>わたしはここ</div>
+      <div class="k">④ 共有</div><h3>つなぐ</h3>
+      <p>配る・集める・共同で書く使い方。</p>
+      <ul><li>Classroomで配付し、回収する</li><li>1つのファイルを共同で編集する</li><li>欠席している児童とつながる</li></ul>
+      <div class="chk"><span class="box"></span>この区分</div>
     </div>
   </div>
 
   <div class="talk">
     <div class="t">
-      <div class="hd"><span class="bd">1</span><h3>となりの先生と</h3><span class="min">3分</span></div>
-      <p>この1学期でいちばん使ったのはどれ？ そのとき具体的に何をした？（学年・教科・場面）</p>
+      <div class="hd"><span class="bd">1</span><h3>近くの席の方と</h3><span class="min">3分</span></div>
+      <p>この1学期で最も多く使ったのはどの区分か。そのとき具体的に何を行ったか（学年・教科・場面）。</p>
     </div>
     <div class="t">
-      <div class="hd"><span class="bd">2</span><h3>全体でひとことずつ</h3><span class="min">4分</span></div>
-      <p>言うのは4つだけ。学年・教科・使った型・やったこと。ひとり30秒で十分です。</p>
+      <div class="hd"><span class="bd">2</span><h3>全体で共有</h3><span class="min">4分</span></div>
+      <p>お話しいただくのは4点のみ。学年・教科・活用の区分・行ったこと。おひとり30秒程度で結構です。</p>
     </div>
     <div class="t">
-      <div class="hd"><span class="bd">3</span><h3>問いをひとつ返す</h3><span class="min">1分</span></div>
-      <p>うまくいかなかった話も出してください。「ここで止まった」が1つ出ると、次に止まる人が減ります。</p>
+      <div class="hd"><span class="bd">3</span><h3>確認の問い</h3><span class="min">1分</span></div>
+      <p>うまくいかなかった事例もお願いします。「試したが、ここで止まった」が1つ出ると、次に止まる方が減ります。</p>
     </div>
   </div>
 
   <div class="callout">
-    <div class="lb">KEY<br>QUESTION</div>
+    <div class="lb">確認の問い</div>
     <div>
-      <div class="q">その使い方で、子どもの何が変わりましたか。</div>
-      <div class="sub">ここが答えられる使い方は、来年も残ります。答えにくいものは、やめてもいい使い方かもしれません。</div>
+      <div class="q">その活用で、児童の何が変わりましたか。</div>
+      <div class="sub">ここに答えられる活用は、次年度以降も残ると考えています。答えにくいものは、取りやめてよい活用かもしれません。</div>
     </div>
   </div>
 
   <div class="takeaway">
     <div class="tw">
-      <div class="k">持ち帰るもの ①</div>
-      <h3>教材の棚｜School Stock</h3>
-      <p>無料・登録不要のプリントと道具の棚。開いて、選んで、印刷するだけ。うら面にQRがあります。</p>
+      <div class="k">本日紹介するもの　①</div>
+      <h3>教材資料（プリント・支援・道具）</h3>
+      <p>登録不要・無料。開いて選び、印刷するだけで使えます。解答付きで1,300枚以上。裏面にQRコードがあります。</p>
     </div>
     <div class="tw">
-      <div class="k">持ち帰るもの ②</div>
+      <div class="k">本日紹介するもの　②</div>
       <h3>先生のPDF道具箱</h3>
-      <p>結合・並べかえ・文字の打ち替え。インストールも通信もなし。うら面にQRがあります。</p>
+      <p>結合・並べ替え・文字の打ち替え。導入作業も通信も不要です。裏面にQRコードがあります。</p>
     </div>
   </div>
 
   <div class="memo-line">
-    <div class="ttl">聞いていて「まねしたい」と思った、となりの先生の使い方</div>
+    <div class="ttl">参考になった、ほかの先生の活用</div>
     <div class="ln"></div>
     <div class="ln"></div>
   </div>
 
   <div class="foot">
-    <div class="fq"><img src="../qr/komoda_qr.png" alt="研修サイトのQR"></div>
-    <div class="ft"><b>今日のページはここに残ります。</b><br>a-tozak.github.io/komoda ／ 資料・リンク・配布資料PDFはすべてこの中にあります。</div>
+    <div class="fq"><img src="../qr/komoda_qr.png" alt="研修資料ページのQRコード"></div>
+    <div class="ft"><b>本日の資料は、研修後もこのページに残します。</b><br>a-tozak.github.io/komoda ／ 本資料のPDF、紹介する資料・ツールへのリンクはすべてこの中にあります。</div>
     <div class="pg">1 / 2</div>
   </div>
 </div>
@@ -227,98 +227,98 @@ h2.first{ margin-top:4.4mm }
 <!-- ================= うら ================= -->
 <div class="page">
   <div class="head">
-    <div class="sch">菰田小学校 校内研修<span>ICT活用</span></div>
-    <div class="date">うら面 ／ 持ち帰るもの<br><b>教材の棚</b> と <b>PDF道具箱</b></div>
+    <div class="sch">令和8年度　菰田小学校　校内研修<span>ICT活用</span></div>
+    <div class="date">裏面 ／ 実践報告と、紹介する資料・ツール</div>
   </div>
 
-  <h2 class="first"><span class="no">2</span>私の実践から3つ<span class="min">11–20 min</span></h2>
+  <h2 class="first"><span class="no">2</span>実践報告<span class="min">11–20分</span></h2>
 
   <div class="jissen">
     <div class="jc">
-      <div class="layer">授業で</div>
-      <h3>飯塚のまちを、書き込めるデジタル副読本にした</h3>
-      <p>3年社会「市の様子」。地域の資料を、電子黒板でそのままペンで書き込めるWebページに。全9ページ。</p>
+      <div class="layer">授業　3年 社会</div>
+      <h3>地域の資料を、書き込めるデジタル副読本にまとめた</h3>
+      <p>3年社会「市の様子」。教科書に掲載のない飯塚市の資料を、電子黒板上でそのまま書き込めるWebページとして整理。全9ページ。</p>
       <dl>
-        <dt>変わったこと</dt>
-        <dd>資料をさがして配る時間が、子どもの気づきを聞く時間になった。</dd>
-        <dt>明日まねするなら</dt>
-        <dd>1ページ分でいい。地域の写真1枚と、問いひとつをスライドに置く。</dd>
+        <dt>成果</dt>
+        <dd>資料の準備と配付の時間が、児童の気づきを取り上げる時間に充てられるようになった。</dd>
+        <dt>取り入れる場合の第一歩</dt>
+        <dd>1ページ分で十分。地域の写真1枚と問い1つをスライドに置くところから。</dd>
       </dl>
       <div class="u">a-tozak.github.io/iizuka-fukudokuhon/</div>
     </div>
     <div class="jc">
-      <div class="layer">気になる子に</div>
-      <h3>読み書きが苦手な子の、手をふさがない道具として</h3>
-      <p>端末は、読むのが苦しい子と書くのが苦しい子にいちばん早く効きます。読み上げ・音声入力・板書を写真で残す、の3つから。</p>
+      <div class="layer">支援　通常の学級</div>
+      <h3>読み書きに困難のある児童への、手立てとしての端末活用</h3>
+      <p>端末は、読むことと書くことに困難のある児童に最も早く効果が現れます。読み上げ・音声入力・板書の写真記録の3点から。</p>
       <dl>
-        <dt>変わったこと</dt>
-        <dd>「書けないから考えられない」がほどけて、その子の考えが表に出た。</dd>
-        <dt>明日まねするなら</dt>
-        <dd>ひとりだけに許すと使いにくい。全員が選べる形で出す。</dd>
+        <dt>成果</dt>
+        <dd>「書けないので考えられない」がほどけ、その児童の考えが表に出るようになった。</dd>
+        <dt>取り入れる場合の第一歩</dt>
+        <dd>特定の児童のみに認めると使いにくい。学級全員が選べる形で提示する。</dd>
       </dl>
-      <div class="u">支援カード35枚 → School Stock「支援」の棚</div>
+      <div class="u">支援カード 全35枚 → 教材資料サイト「支援」</div>
     </div>
     <div class="jc">
-      <div class="layer">校務で</div>
-      <h3>くり返しの作業は、書かずに任せる</h3>
-      <p>Classroomの課題を学年ぶん一度につくる、スライドを全ページまとめて複製する。コピペで動くので、書ける必要はありません。</p>
+      <div class="layer">校務　学年・分掌</div>
+      <h3>繰り返しの作業を、一括処理に置き換えた</h3>
+      <p>Classroomの課題を学年分まとめて作成する、スライドを全ページ一括で複製するなど。コードは配布されているものを貼るだけで動きます。</p>
       <dl>
-        <dt>変わったこと</dt>
-        <dd>配る作業の待ち時間がなくなり、教材を考える側に時間が戻った。</dd>
-        <dt>明日まねするなら</dt>
-        <dd>「同じ操作を10回以上やっているもの」を1つ書き出す。</dd>
+        <dt>成果</dt>
+        <dd>配付作業の待ち時間がなくなり、教材を考える時間に充てられるようになった。</dd>
+        <dt>取り入れる場合の第一歩</dt>
+        <dd>「同じ操作を10回以上行っている作業」を1つ書き出す。</dd>
       </dl>
-      <div class="u">実践アイデア村 → School Stock「アイデア」の棚</div>
+      <div class="u">手順とコード → 教材資料サイト「実践アイデア集」</div>
     </div>
   </div>
 
-  <h2><span class="no">3</span>教材の棚｜School Stock<span class="min">無料・登録不要・答えつき</span></h2>
+  <h2><span class="no">3</span>教材資料の紹介<span class="min">登録不要・無料・解答付き</span></h2>
   <div class="qrblock">
     <div class="qr">
-      <img src="../qr/qr_schoolstock.png" alt="School StockのQR">
-      <div class="cap">School Stock</div>
+      <img src="../qr/qr_schoolstock.png" alt="教材資料サイトのQRコード">
+      <div class="cap">教材資料サイト</div>
     </div>
     <div class="bd">
-      <h3>開いて、選んで、印刷するだけ。プリントは1,300枚以上。</h3>
-      <p>登録もログインもいりません。授業でも宿題でも、同僚に渡してもかまいません。いきなり全部見ようとせず、<b>「明日の朝、刷るもの」を1枚だけ決める</b>ところから始めるのがおすすめです。</p>
+      <h3>開いて選び、印刷するだけ。あわせて1,300枚以上。</h3>
+      <p>登録もログインも不要です。授業でも宿題でも、同僚にお渡しいただいてもかまいません。一度に全体を見ようとせず、<b>「明日の朝に印刷するもの」を1枚だけ決める</b>ところから始めてください。</p>
       <div class="url">https://a-tozak.github.io/School_Stock/</div>
       <div class="shelf6">
-        <div><b>01 プリント</b><span>／国語259枚・算数88単元・理科・社会・体育</span></div>
-        <div><b>02 支援</b><span>／支援カード35枚・読みもの</span></div>
-        <div><b>03 道具</b><span>／PDF道具箱・ことば辞典378語・素材</span></div>
-        <div><b>04 アイデア</b><span>／実践アイデア村 20件</span></div>
-        <div><b>05 教材研究</b><span>／単元ごとの授業づくりノート</span></div>
-        <div><b>06 読みもの</b><span>／寄り道プロンプト帳</span></div>
+        <div><b>01 教科のプリント</b><span>／国語259枚・算数88単元・理科・社会・体育</span></div>
+        <div><b>02 支援の資料</b><span>／支援カード35枚・読み物</span></div>
+        <div><b>03 授業と校務の道具</b><span>／PDF道具箱・ことば辞典378語</span></div>
+        <div><b>04 実践アイデア集</b><span>／授業と校務の実践 20件</span></div>
+        <div><b>05 教材研究ノート</b><span>／指導案・ワークシート付き</span></div>
+        <div><b>06 素材</b><span>／スライドに使えるイラスト・写真</span></div>
       </div>
     </div>
   </div>
 
-  <h2><span class="no">4</span>先生のPDF道具箱<span class="min">入れなくていい・通信しない</span></h2>
+  <h2><span class="no">4</span>ツールの紹介（先生のPDF道具箱）<span class="min">導入不要・通信なし</span></h2>
   <div class="qrblock">
     <div class="qr">
-      <img src="../qr/qr_pdftoolbox.png" alt="先生のPDF道具箱のQR">
+      <img src="../qr/qr_pdftoolbox.png" alt="先生のPDF道具箱のQRコード">
       <div class="cap">PDF道具箱</div>
     </div>
     <div class="bd">
-      <h3>HTMLファイル1つで動きます。処理はぜんぶ、このPCの中。</h3>
-      <p>インストールも管理者権限もネット接続もいりません。<b>ファイルはどこにも送られない</b>ので、児童名の入った書類でも扱えます。4月の教務の仕事と、研究会の冊子づくりのためにつくりました。</p>
+      <h3>HTMLファイル1つで動作。処理はすべてそのPCの中で完結します。</h3>
+      <p>インストール・管理者権限・ネットワーク接続のいずれも不要です。<b>ファイルが外部に送信されることはない</b>ため、児童名を含む文書も扱えます。年度当初の文書のとりまとめと、研究会の冊子作成を想定して作成しました。</p>
       <div class="url">https://a-tozak.github.io/School_Stock/tools/pdf-toolbox/</div>
       <div class="can">
-        <div>複数のPDFを結合・並べかえ・削除</div>
-        <div>もとの文字を打ち替え（PCのフォントが選べる）</div>
+        <div>複数のPDFを結合・並べ替え・削除</div>
+        <div>元の文字を打ち替え（PCのフォントを選択可）</div>
         <div>ページ番号・2面付け（A4縦2枚→A4横1枚）</div>
         <div>縦書きの書き込み・抽出・分割・回転</div>
       </div>
       <div class="steps3">
-        <div><b>1｜落とす</b>ボタンから pdf-toolbox.html を保存（ダウンロードフォルダ）。</div>
-        <div><b>2｜開く</b>ダブルクリック。開かなければ右クリックからEdgeかChromeで。</div>
-        <div><b>3｜入れる</b>PDFをドラッグ。直すページはダブルクリックで編集画面へ。</div>
+        <div><b>1｜保存する</b>ボタンから pdf-toolbox.html を保存（ダウンロードフォルダ）。</div>
+        <div><b>2｜開く</b>ダブルクリック。開かない場合は右クリックからEdgeかChromeで。</div>
+        <div><b>3｜読み込む</b>PDFをドラッグ。修正するページはダブルクリックで編集画面へ。</div>
       </div>
     </div>
   </div>
 
   <div class="next">
-    <div class="ttl"><h3>明日ひとつ、やってみること</h3><span class="sub">大きいことでなくていい。決めて帰るのが今日のゴールです。</span></div>
+    <div class="ttl"><h3>明日ひとつ、やってみること</h3><span class="sub">大きいことでなくて結構です。定めて終えることを、本日の到達点とします。</span></div>
     <div class="row">
       <div>
         <div class="lb">やること</div>
@@ -328,17 +328,17 @@ h2.first{ margin-top:4.4mm }
       <div>
         <div class="lb">いつ（日にち・時間）</div>
         <div class="ln s"></div>
-        <div class="lb" style="margin-top:1.6mm">だれかに言うなら（相手）</div>
+        <div class="lb" style="margin-top:1.6mm">誰かに伝えるなら（相手）</div>
         <div class="ln s"></div>
       </div>
     </div>
   </div>
 
   <div class="foot">
-    <div class="fq"><img src="../qr/komoda_qr.png" alt="研修サイトのQR"></div>
-    <div class="ft"><b>菰田小学校 校内研修（2026年7月22日）／ 外﨑 顯博</b><br>
-      資料とリンクは a-tozak.github.io/komoda に残しています。質問は職員室か EdtechChikuho@gmail.com へ。<br>
-      本資料の文章・図版はすべて自作です。© 2026 外﨑顯博 ／ LiFE with</div>
+    <div class="fq"><img src="../qr/komoda_qr.png" alt="研修資料ページのQRコード"></div>
+    <div class="ft"><b>令和8年度　菰田小学校 校内研修（ICT活用）／ 令和8年7月22日（水）／ 担当　外﨑 顯博</b><br>
+      資料とリンクは a-tozak.github.io/komoda に残しています。ご質問は職員室まで。<br>
+      本資料の文章・図版はすべて自作です。児童の個人情報・校内資料・教科書紙面は掲載していません。© 2026 外﨑顯博</div>
     <div class="pg">2 / 2</div>
   </div>
 </div>
